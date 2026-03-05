@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
         {
             "name": "C: Debug Current File",
             "type": "cppdbg",
@@ -13,6 +14,26 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "preLaunchTask": "gcc build current file",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "C++: Debug Current File",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "preLaunchTask": "g++ build current file",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
